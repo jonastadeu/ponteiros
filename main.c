@@ -12,7 +12,7 @@
 int main ()
 {
 	// criacao e inicializacao das variaveis
-	int Variavel_1 = 1, Variavel_2 = 2;
+	int Variavel_1 = 1, Variavel_2 = 2, Variavel_3;
 	char Controle = 'n', Descarga;
 	
 	// criacao dos ponteiros
@@ -30,8 +30,18 @@ int main ()
 		printf ("\nVariavel_1 = %i", *Ponteiro_1);
 		printf ("\nVariavel_2 = %i", *Ponteiro_2);
 		
+		// swap
+		Variavel_3 = *Ponteiro_1;
+		*Ponteiro_1 = *Ponteiro_2;
+		*Ponteiro_2 = Variavel_3;
+		
+		// exibe o valor contido em cada variavel a partir do endereco contido 
+		// nos ponteiros
+		printf ("\nVariavel_1 depois do swap = %i", *Ponteiro_1);
+		printf ("\nVariavel_2 depois do swap = %i", *Ponteiro_2);
+		
 		// exibe a solicitacao de controle
-		printf ("\n\nDeseja finalizar o programa? (s/n)");
+		printf ("\n\nDeseja finalizar o programa? (s/n) ");
 		// efetua a leitura do comando
 		scanf ("%c", &Controle);
 		// se o comando indicar a finalizacao, finaliza o loop
