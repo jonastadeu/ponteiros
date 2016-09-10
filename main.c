@@ -9,23 +9,40 @@
 
 #include <stdio.h>
 
+typedef struct {
+	int indice;
+	char nome [50];
+	char telefone [15];
+	char endereco [50];
+	char email [50];
+} entrada;
+
 int main ()
 {
 	// criacao e inicializacao das variaveis e ponteiros
-	//char Minha_String [] = {"1234567890"};
-	char Minha_String [11] = {'1','2','3','4','5','6','7','8','9','0'};
-	char *Meu_Ponteiro = &Minha_String;
+	entrada Pagina_01;
+	entrada *Ptr = &Pagina_01;
 	
-	// exibe o valor contido em cada posicao da string a partir do endereco 
-	// contido no ponteiro
-	do
-	{
-		printf ("\nO Meu_Ponteiro aponta para o valor: %c\n", *Meu_Ponteiro);
-		Meu_Ponteiro ++;
-	}
-	while (*Meu_Ponteiro != 0);
+	//Pagina_01.Indice = 1;
+	//Pagina_01.Nome = {"Jonas Tadeu Reichert"};
+	//Pagina_01.Telefone = {"(55) 9903-4395"};
 	
-	printf ("\nO tamanho de Minha_String e: %i\n", sizeof (Minha_String) );
+	printf ("\nInsira a entrada: ");
+	//scanf ("%i", &Pagina_01.indice);
+	scanf ("%i", &Ptr->indice);
+	//scanf ("%i", &(*Ptr).indice);
+	
+	printf ("\nInsira o Nome: ");
+	scanf ("%s", &Pagina_01.nome);
+	
+	printf ("\nInsira o Telefone: ");
+	scanf ("%s", &Pagina_01.telefone);
+	
+	printf ("\nEntrada: %i", Pagina_01.indice);
+	//printf ("\nNome: %s", Pagina_01.nome);
+	printf ("\nNome: %s", Ptr->nome);
+	printf ("\nNome: %s", (*Ptr).nome);
+	printf ("\nTelefone: %s", Pagina_01.telefone);
 	
 	// retorna 0
 	return 0;
