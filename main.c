@@ -22,6 +22,7 @@ int main ()
 	// criacao e inicializacao das variaveis e ponteiros
 	entrada Pagina_01;
 	entrada *Ptr = &Pagina_01;
+	char Descarga;
 	
 	//Pagina_01.Indice = 1;
 	//Pagina_01.Nome = {"Jonas Tadeu Reichert"};
@@ -32,16 +33,21 @@ int main ()
 	scanf ("%i", &Ptr->indice);
 	//scanf ("%i", &(*Ptr).indice);
 	
+	Descarga = getchar ();
+	
 	printf ("\nInsira o Nome: ");
-	scanf ("%s", &Pagina_01.nome);
+	//scanf ("%s", &Pagina_01.nome); // captura uma string ate encontrar um espaco
+	gets (Pagina_01.nome); // captura uma string ate encontrar 'nova linha'
+	
 	
 	printf ("\nInsira o Telefone: ");
-	scanf ("%s", &Pagina_01.telefone);
+	//scanf ("%s", &Pagina_01.telefone);
+	gets (Pagina_01.telefone);
 	
 	printf ("\nEntrada: %i", Pagina_01.indice);
 	//printf ("\nNome: %s", Pagina_01.nome);
 	printf ("\nNome: %s", Ptr->nome);
-	printf ("\nNome: %s", (*Ptr).nome);
+	//printf ("\nNome: %s", (*Ptr).nome);
 	printf ("\nTelefone: %s", Pagina_01.telefone);
 	
 	// retorna 0
